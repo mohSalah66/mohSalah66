@@ -1,0 +1,116 @@
+name: Daily Metrics
+on:
+  # Schedule daily updates
+  schedule: [{ cron: "0 0 * * *" }]
+  # (optional) Run workflow manually
+  workflow_dispatch:
+  # (optional) Run workflow when pushing on master/main
+  # push: {branches: ["master", "main"]}
+jobs:
+  devcard:
+      runs-on: ubuntu-latest
+      steps:
+        - name: devcard
+          uses: dailydotdev/action-devcard@2.0.5
+          with:
+            devcard_id: ${{ secrets.DEVCARD_ID }}
+            commit_filename: res/mohsalah66.devcard.svg
+            commit_message: "chore: update ${filename}"
+            
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo Status
+        uses: lowlighter/metrics@v3.20
+        with:
+          filename: res/mohsalah66.profile.overview.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: mohsalah66
+          base: header, repositories
+          plugin_lines: yes
+          repositories: 1000
+          committer_message: "chore: update profile overview."
+
+  github-habits-list:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get The habits
+        uses: lowlighter/metrics@v3.20
+        with:
+          filename: res/mohsalah66.habits.charts.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 1000
+          committer_message: "chore: update habits chart."
+          plugin_habits: yes
+          plugin_habits_from: 1000
+          plugin_habits_facts: yes
+          plugin_habits_days: 30
+          plugin_habits_trim: yes
+          plugin_habits_charts: yes
+          config_timezone: africa/khartoum
+
+  github-language-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Languages Status Must Used (with details)
+        uses: lowlighter/metrics@v3.20
+        with:
+          filename: res/mohsalah66.languages.details.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          repositories: 1000
+          committer_message: "chore: update languages stats."
+          plugin_languages: yes
+          plugin_languages_categories: programming, data, prose, markup
+          plugin_languages_details: bytes-size, percentage, lines
+          plugin_languages_limit: 8
+          config_timezone: africa/khartoum
+
+  github-manga-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the manga Stats
+        uses: lowlighter/metrics@v3.20
+        with:
+          filename: res/mohsalah66.anilist.manga.svg
+          token: NOT_NEEDED
+          base: ""
+          committer_message: "chore: update manga list"
+          plugin_anilist: yes
+          plugin_anilist_medias: manga
+          plugin_anilist_sections: favorites, reading, characters
+          plugin_anilist_limit: 10000
+          config_timezone: africa/khartoum
+
+  github-anilist-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the the anime list
+        uses: lowlighter/metrics@latest
+        with:
+          filename: res/mohsalah66.anilist.svg
+          token: NOT_NEEDED
+          base: ""
+          committer_message: "chore: update anime list"
+          plugin_anilist: yes
+          plugin_anilist_medias: anime
+          plugin_anilist_sections: favorites, watching
+          plugin_anilist_limit: 1000
+          config_timezone: africa/khartoum
+
+  github-language-recent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recently used
+        uses: lowlighter/metrics@v3.20
+        with:
+          filename: res/mohsalah66.languages.recent.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          committer_message: "chore: update recent used languages"
+          plugin_languages: yes
+          plugin_languages_sections: recently-used
+          plugin_languages_details: bytes-size, percentage, lines
+          plugin_languages_limit: 8
+          config_timezone: africa/khartoum
