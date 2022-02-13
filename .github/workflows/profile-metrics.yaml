@@ -26,7 +26,7 @@ jobs:
           filename: res/mohsalah66.profile.overview.svg
           token: ${{ secrets.METRICS_TOKEN }}
           user: mohsalah66
-          base: header, repositories
+          base: header, repositories, activity, community, metadata
           plugin_lines: yes
           repositories: 1000
           committer_message: "chore: update profile overview."
