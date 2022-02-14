@@ -30,6 +30,7 @@ jobs:
           plugin_lines: yes
           repositories: 1000
           committer_message: "chore: update profile overview."
+          config_timezone: africa/khartoum
 
   github-habits-list:
     runs-on: ubuntu-latest
