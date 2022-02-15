@@ -1,7 +1,4 @@
-
-![](https://hit.yhype.me/github/profile?user_id=4747488)
-
-## Introduction
+## Introduction ![](https://hit.yhype.me/github/profile?user_id=4747488)
 
 _Hello_,
 My name is **_Mohamed Salah_** I **Take** a look around and enjoy my github profile, I hope you find something useful **_OR_** you can hire me to do something useful for you :smile:
