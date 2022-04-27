@@ -69,4 +69,4 @@ My name is **_Mohamed Salah_** I **Take** a look around and enjoy my github prof
 
 ![Metrics](/res/mohsalah66.anilist.manga.svg)
 
-### I hope you enjoyed your time here , for more info please feel free to contact me at my [MohSalah66](https://mohsalah.net)
+### I hope you enjoyed your time here , for more info please feel free to contact me at my [Website](https://mohsalah.net)
