@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Repo Status
-        uses: lowlighter/metrics@v3.20
+        uses: lowlighter/metrics@v3.23
         with:
           filename: res/mohsalah66.profile.overview.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get The habits
-        uses: lowlighter/metrics@v3.20
+        uses: lowlighter/metrics@v3.23
         with:
           filename: res/mohsalah66.habits.charts.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Languages Status Must Used (with details)
-        uses: lowlighter/metrics@v3.20
+        uses: lowlighter/metrics@v3.23
         with:
           filename: res/mohsalah66.languages.details.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get the manga Stats
-        uses: lowlighter/metrics@v3.20
+        uses: lowlighter/metrics@v3.23
         with:
           filename: res/mohsalah66.anilist.manga.svg
           token: NOT_NEEDED
@@ -88,7 +88,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get the the anime list
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.23
         with:
           filename: res/mohsalah66.anilist.svg
           token: NOT_NEEDED
@@ -104,7 +104,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Recently used
-        uses: lowlighter/metrics@v3.20
+        uses: lowlighter/metrics@v3.23
         with:
           filename: res/mohsalah66.languages.recent.svg
           token: ${{ secrets.METRICS_TOKEN }}
