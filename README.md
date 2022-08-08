@@ -58,15 +58,16 @@ My name is **_Mohamed Salah_** I **Take** a look around and enjoy my github prof
 ## Top Languages Used recently around here
 
 ![Metrics](/res/mohsalah66.languages.recent.svg)
+<!--
+## Still needs more?
 
-# ## Still needs more?
+### Here is my anime list if you are interested.
 
-# ### Here is my anime list if you are interested.
+![Metrics](/res/mohsalah66.anilist.svg)
 
-# ![Metrics](/res/mohsalah66.anilist.svg)
+### also never mind take a look at my manga list
 
-# ### also never mind take a look at my manga list
-
-# ![Metrics](/res/mohsalah66.anilist.manga.svg)
+![Metrics](/res/mohsalah66.anilist.manga.svg)
+-->
 
 ### I hope you enjoyed your time here , for more info please feel free to contact me at my [Website](https://mohsalah.net)
