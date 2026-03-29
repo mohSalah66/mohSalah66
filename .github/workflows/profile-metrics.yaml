@@ -104,17 +104,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Recently used
-        uses: lowlighter/metrics@v3.20
+        uses: lowlighter/metrics@v3.34  # ← bumped from v3.20
         with:
           filename: res/mohsalah66.languages.recent.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          user: mohsalah66
           base: ""
+          repositories: 1000
           committer_message: "chore: update recent used languages"
           plugin_languages: yes
           plugin_languages_sections: recently-used
           plugin_languages_details: percentage, lines
           plugin_languages_limit: 8
-          config_timezone: africa/khartoum
+          config_timezone: Africa/Khartoum
   github-snake:
     runs-on: ubuntu-latest
     timeout-minutes: 10
