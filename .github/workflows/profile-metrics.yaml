@@ -57,6 +57,7 @@ jobs:
 
   github-language-status:
     runs-on: ubuntu-latest
+    needs: github-habits-list   
     steps:
       - name: Languages Status Must Used (with details)
         uses: lowlighter/metrics@v3.20
@@ -94,6 +95,7 @@ jobs:
           git add -A .
           git commit -m "chore: update 3d contribution graph" || echo "nothing to commit"
           git push
+  
   github-snake:
     runs-on: ubuntu-latest
     timeout-minutes: 10
