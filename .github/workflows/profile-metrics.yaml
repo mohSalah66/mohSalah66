@@ -1,117 +1,84 @@
 name: Daily Metrics
+
 on:
-  # Schedule daily updates
-  schedule: [{ cron: "0 0 * * *" }]
-  # (optional) Run workflow manually
+  schedule:
+    - cron: "0 0 * * *"
   workflow_dispatch:
-  # (optional) Run workflow when pushing on master/main
-  # push: {branches: ["master", "main"]}
+
+permissions:
+  contents: write
+  pages: write
+
 jobs:
-  devcard:
-      runs-on: ubuntu-latest
-      steps:
-        - name: devcard
-          uses: dailydotdev/action-devcard@2.0.5
-          with:
-            devcard_id: ${{ secrets.DEVCARD_ID }}
-            commit_filename: res/mohsalah66.devcard.svg
-            commit_message: "chore: update ${filename}"
-            
-  github-metrics:
+  metrics:
     runs-on: ubuntu-latest
     steps:
-      - name: Repo Status
+      - name: Generate Profile Overview
         uses: lowlighter/metrics@v3.20
         with:
-          filename: res/mohsalah66.profile.overview.svg
+          filename: res/profile.overview.svg
           token: ${{ secrets.METRICS_TOKEN }}
           user: mohsalah66
           base: header, repositories, activity, community, metadata
           plugin_lines: yes
           repositories: 1000
-          committer_message: "chore: update profile overview."
-          config_timezone: africa/khartoum
+          config_timezone: Africa/Cairo
 
-  github-habits-list:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get The habits
+      - name: Generate Habits
         uses: lowlighter/metrics@v3.20
         with:
-          filename: res/mohsalah66.habits.charts.svg
+          filename: res/habits.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
-          repositories: 1000
-          committer_message: "chore: update habits chart."
           plugin_habits: yes
-          plugin_habits_from: 1000
-          plugin_habits_facts: yes
           plugin_habits_days: 30
-          plugin_habits_trim: yes
           plugin_habits_charts: yes
-          config_timezone: africa/khartoum
+          config_timezone: Africa/Cairo
 
-  github-language-status:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Languages Status Must Used (with details)
+      - name: Generate Languages Details
         uses: lowlighter/metrics@v3.20
         with:
-          filename: res/mohsalah66.languages.details.svg
+          filename: res/languages.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
-          repositories: 1000
-          committer_message: "chore: update languages stats."
           plugin_languages: yes
-          plugin_languages_categories: programming, data, prose, markup
           plugin_languages_details: percentage, lines
           plugin_languages_limit: 8
-          config_timezone: africa/khartoum
+          config_timezone: Africa/Cairo
 
-  github-manga-stats:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get the manga Stats
+      - name: Generate Recent Languages
         uses: lowlighter/metrics@v3.20
         with:
-          filename: res/mohsalah66.anilist.manga.svg
-          token: NOT_NEEDED
-          base: ""
-          committer_message: "chore: update manga list"
-          plugin_anilist: yes
-          plugin_anilist_medias: manga
-          plugin_anilist_sections: favorites, reading, characters
-          plugin_anilist_limit: 10000
-          config_timezone: africa/khartoum
-
-  github-anilist-status:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get the the anime list
-        uses: lowlighter/metrics@latest
-        with:
-          filename: res/mohsalah66.anilist.svg
-          token: NOT_NEEDED
-          base: ""
-          committer_message: "chore: update anime list"
-          plugin_anilist: yes
-          plugin_anilist_medias: anime
-          plugin_anilist_sections: favorites, watching
-          plugin_anilist_limit: 1000
-          config_timezone: africa/khartoum
-
-  github-language-recent:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Recently used
-        uses: lowlighter/metrics@v3.20
-        with:
-          filename: res/mohsalah66.languages.recent.svg
+          filename: res/languages.recent.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
-          committer_message: "chore: update recent used languages"
           plugin_languages: yes
           plugin_languages_sections: recently-used
-          plugin_languages_details: percentage, lines
           plugin_languages_limit: 8
-          config_timezone: africa/khartoum
+          config_timezone: Africa/Cairo
+
+  devcard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate DevCard
+        uses: dailydotdev/action-devcard@2.0.5
+        with:
+          devcard_id: ${{ secrets.DEVCARD_ID }}
+          commit_filename: res/devcard.svg
+
+  snake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate Snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: mohSalah66
+          outputs: dist/github-contribution-grid-snake.svg
+
+      - name: Push Snake
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
