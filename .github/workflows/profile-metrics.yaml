@@ -70,6 +70,7 @@ jobs:
 
   github-3d-contrib:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v3
 
@@ -79,14 +80,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
           USERNAME: mohsalah66
           MAX_REPOS: 100
-          SETTING_JSON: |
-            {
-              "githubUserName": "mohsalah66",
-              "title": "",
-              "backgroundColor": "",
-              "foregroundColor": "",
-              "donuteStyle3DGraph": false
-            }
 
       - name: Push 3D graph to repo
         uses: crazy-max/ghaction-github-pages@v3
@@ -95,7 +88,6 @@ jobs:
           build_dir: profile-3d-contrib
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
   github-snake:
     runs-on: ubuntu-latest
     timeout-minutes: 10
