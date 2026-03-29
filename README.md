@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=mohSalah66&color=blue&style=flat-square" />
+  <img src="https://komarev.com/ghpvc/?username=mohSalah66&label=Profile%20Views&color=0e75b6&style=for-the-badge" />
 </p>
 
 ---
@@ -18,6 +18,12 @@
 - 🔐 Strong focus on security (PKI, authentication, SSL systems)
 - 🎥 Working on real-time communication systems (LiveKit / WebRTC)
 - 🚀 Founder of **Spark** — building production-grade applications
+
+## 🧩 Dev Card
+
+<p align="center">
+  <img src="https://github.com/mohSalah66/mohSalah66/blob/res/devcard.svg" />
+</p>
 
 ---
 ## ⚡ Tech Stack
