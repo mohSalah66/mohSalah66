@@ -68,55 +68,6 @@ jobs:
           plugin_languages_limit: 8
           config_timezone: africa/khartoum
 
-  github-manga-stats:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get the manga Stats
-        uses: lowlighter/metrics@v3.20
-        with:
-          filename: res/mohsalah66.anilist.manga.svg
-          token: NOT_NEEDED
-          base: ""
-          committer_message: "chore: update manga list"
-          plugin_anilist: yes
-          plugin_anilist_medias: manga
-          plugin_anilist_sections: favorites, reading, characters
-          plugin_anilist_limit: 10000
-          config_timezone: africa/khartoum
-
-  github-anilist-status:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get the the anime list
-        uses: lowlighter/metrics@latest
-        with:
-          filename: res/mohsalah66.anilist.svg
-          token: NOT_NEEDED
-          base: ""
-          committer_message: "chore: update anime list"
-          plugin_anilist: yes
-          plugin_anilist_medias: anime
-          plugin_anilist_sections: favorites, watching
-          plugin_anilist_limit: 1000
-          config_timezone: africa/khartoum
-
-  github-language-recent:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Recently used
-        uses: lowlighter/metrics@main  # ← bumped from v3.20
-        with:
-          filename: res/mohsalah66.languages.recent.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: mohsalah66
-          base: ""
-          repositories: 1000
-          committer_message: "chore: update recent used languages"
-          plugin_languages: yes
-          plugin_languages_sections: recently-used
-          plugin_languages_details: percentage, lines
-          plugin_languages_limit: 8
-          config_timezone: Africa/Khartoum
   github-snake:
     runs-on: ubuntu-latest
     timeout-minutes: 10

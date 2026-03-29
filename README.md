@@ -102,10 +102,6 @@ A snapshot of the tools and technologies I work with regularly:
 
 ![Metrics](res/mohsalah66.languages.details.svg)
 
-**Recently active**
-
-![Metrics](res/mohsalah66.languages.recent.svg)
-
 ---
 
 ## Coding Habits
