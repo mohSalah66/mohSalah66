@@ -11,10 +11,10 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: devcard
-          uses: dailydotdev/action-devcard@3.2.1
+          uses: dailydotdev/action-devcard@2.0.5
           with:
-            user_id: ${{ secrets.DEVCARD_ID }}
-            commit_filename: res/mohsalah66.devcard.png
+            devcard_id: ${{ secrets.DEVCARD_ID }}
+            commit_filename: res/mohsalah66.devcard.svg
             commit_message: "chore: update ${filename}"
             
   github-metrics:
