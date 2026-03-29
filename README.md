@@ -22,30 +22,15 @@
 ## 🧩 Dev Card
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/res/devcard.svg" />
+  <img src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/res/devcard.svg" alt="DevCard" />
 </p>
 
 ---
-## ⚡ Tech Stack
 
-### 🧩 Backend & Systems
-![ASP.NET](https://img.shields.io/badge/-ASP.NET%20Core-512BD4?style=for-the-badge)
-![Rust](https://img.shields.io/badge/-Rust-000000?style=for-the-badge)
-![Go](https://img.shields.io/badge/-Go-00ADD8?style=for-the-badge)
-![Node.js](https://img.shields.io/badge/-Node.js-339933?style=for-the-badge)
-
-### 🎨 Frontend
-![Angular](https://img.shields.io/badge/-Angular-DD0031?style=for-the-badge)
-![Next.js](https://img.shields.io/badge/-Next.js-000000?style=for-the-badge)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge)
-![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-38B2AC?style=for-the-badge)
-
----
-
-## 📊 Full Tech Footprint
+## ⚡ Tech Stack & Languages
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/res/languages.svg" />
+  <img src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/res/languages.svg" alt="Languages" />
 </p>
 
 ---
@@ -64,10 +49,10 @@
 
 ---
 
-## 📊 GitHub Activity & Habits
+## 📊 GitHub Activity
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/res/metrics.base.svg" />
+  <img src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/res/metrics.base.svg" alt="Metrics" />
 </p>
 
 ---
@@ -83,7 +68,7 @@
 ## 🐍 Contribution Graph
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/res/github-contribution-grid-snake.svg" />
+  <img src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/res/github-contribution-grid-snake.svg" alt="Snake" />
 </p>
 
 ---

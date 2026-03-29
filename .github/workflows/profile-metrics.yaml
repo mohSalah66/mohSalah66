@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # 1. Base Metrics & Habits
-      - name: Base & Habits
-        uses: lowlighter/metrics@v3.20
+      - name: General Metrics
+        uses: lowlighter/metrics@latest
         with:
           filename: metrics.base.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -22,10 +22,9 @@ jobs:
           plugin_habits_charts: yes
           config_timezone: Africa/Cairo
 
-      # 2. Languages (Using @master to bypass the 'author' bug)
+      # 2. Languages (Stable mode: most-used only to avoid the 'author' crash)
       - name: Languages
-        uses: lowlighter/metrics@master
-        continue-on-error: true 
+        uses: lowlighter/metrics@latest
         with:
           filename: languages.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -52,14 +51,13 @@ jobs:
             github-contribution-grid-snake.svg
             github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # 5. Move all generated SVGs to the deployment folder
-      - name: Prepare Assets
+      # 5. Prepare and Deploy
+      - name: Prepare Assets for Deployment
         run: |
           mkdir -p dist/res
           mv *.svg dist/res/ 2>/dev/null || true
-
-      # 6. Push All Assets to 'output' branch
-      - name: Push Assets
+      
+      - name: Push to Output Branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: output
