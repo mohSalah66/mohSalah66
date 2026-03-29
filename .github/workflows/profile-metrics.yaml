@@ -10,21 +10,20 @@ jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
-      # 1. Base Metrics & Habits
+      # 1. Base Metrics (Stable)
       - name: General Metrics
         uses: lowlighter/metrics@latest
+        continue-on-error: true
         with:
           filename: metrics.base.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: header, repositories, activity, community, metadata
-          plugin_habits: yes
-          plugin_habits_days: 30
-          plugin_habits_charts: yes
           config_timezone: Africa/Cairo
 
-      # 2. Languages (Stable mode: most-used only to avoid the 'author' crash)
+      # 2. Languages (The step causing the TypeError)
       - name: Languages
         uses: lowlighter/metrics@latest
+        continue-on-error: true # CRITICAL: This allows the job to continue even if it crashes
         with:
           filename: languages.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -38,6 +37,7 @@ jobs:
       # 3. DevCard
       - name: Generate DevCard
         uses: dailydotdev/action-devcard@2.0.5
+        continue-on-error: true
         with:
           devcard_id: ${{ secrets.DEVCARD_ID }}
           commit_filename: devcard.svg
@@ -45,19 +45,21 @@ jobs:
       # 4. Snake Animation
       - name: Generate Snake
         uses: Platane/snk@v3
+        continue-on-error: true
         with:
           github_user_name: mohSalah66
           outputs: |
             github-contribution-grid-snake.svg
             github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # 5. Prepare and Deploy
-      - name: Prepare Assets for Deployment
+      # 5. Deployment Step
+      - name: Prepare Assets
         run: |
           mkdir -p dist/res
+          # Move whatever SVGs WERE successfully generated
           mv *.svg dist/res/ 2>/dev/null || true
       
-      - name: Push to Output Branch
+      - name: Deploy to Output Branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: output
