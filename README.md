@@ -127,9 +127,9 @@ A snapshot of the tools and technologies I work with regularly:
 **3D Isometric**
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mohSalah66/mohSalah66/main/profile-3d-contrib/profile-night-rainbow.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mohSalah66/mohSalah66/main/profile-3d-contrib/profile-south-season-animate.svg" />
-  <img alt="3D Isometric Contribution Graph" src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/main/profile-3d-contrib/profile-night-rainbow.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mohSalah66/mohSalah66/master/profile-3d-contrib/profile-night-rainbow.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mohSalah66/mohSalah66/master/profile-3d-contrib/profile-south-season-animate.svg" />
+  <img alt="3D Isometric Contribution Graph" src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/master/profile-3d-contrib/profile-night-rainbow.svg" />
 </picture>
 
 ---

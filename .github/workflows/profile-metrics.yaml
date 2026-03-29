@@ -71,23 +71,25 @@ jobs:
   github-3d-contrib:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
 
       - name: 3D Contribution Graph
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
-          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: mohsalah66
           MAX_REPOS: 100
 
-      - name: Push 3D graph to repo
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: main
-          build_dir: profile-3d-contrib
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit & Push
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -A .
+          git commit -m "chore: update 3d contribution graph" || echo "nothing to commit"
+          git push
   github-snake:
     runs-on: ubuntu-latest
     timeout-minutes: 10
