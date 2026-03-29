@@ -14,7 +14,7 @@ jobs:
           uses: dailydotdev/action-devcard@3.2.1
           with:
             user_id: ${{ secrets.DEVCARD_ID }}
-            commit_filename: res/mohsalah66.devcard.svg
+            commit_filename: res/mohsalah66.devcard.png
             commit_message: "chore: update ${filename}"
             
   github-metrics:

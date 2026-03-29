@@ -24,14 +24,8 @@
 <p align="center">
   <img alt="Profile Overview" src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/master/res/mohsalah66.profile.overview.svg" width="60%">
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img alt="Dev Card" src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/master/res/mohsalah66.devcard.svg" width="25%">
+  <img alt="Dev Card" src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/master/res/mohsalah66.devcard.png" width="25%">
 </p>
-
----
-
-## GitHub Stats
-
-![MohSalah66](https://github-readme-stats.vercel.app/api?username=mohsalah66&theme=radical&show_icons=true&include_all_commits=true&count_private=true)
 
 ---
 
