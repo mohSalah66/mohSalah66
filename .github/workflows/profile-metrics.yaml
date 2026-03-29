@@ -104,7 +104,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Recently used
-        uses: lowlighter/metrics@v3.34  # ← bumped from v3.20
+        uses: lowlighter/metrics@main  # ← bumped from v3.20
         with:
           filename: res/mohsalah66.languages.recent.svg
           token: ${{ secrets.METRICS_TOKEN }}
