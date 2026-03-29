@@ -22,7 +22,7 @@
 ## 🧩 Dev Card
 
 <p align="center">
-  <img src="https://github.com/mohSalah66/mohSalah66/blob/res/devcard.svg" />
+  <img src="https://github.com/mohSalah66/mohSalah66/blob/master/res/devcard.svg" />
 </p>
 
 ---

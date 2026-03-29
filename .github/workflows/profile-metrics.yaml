@@ -1,4 +1,4 @@
-name: Daily Metrics
+name: Daily Metrics v1.0.0
 
 on:
   schedule:
@@ -12,18 +12,20 @@ jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
-      # 1. Main Metrics: Combined for efficiency to prevent API rate limiting
+      # 1. Main Metrics: Fixed to avoid 'author of undefined' crash
       - name: General & Language Metrics
         uses: lowlighter/metrics@v3.20
         with:
           filename: res/metrics.base.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: header, repositories, activity, community, metadata
-          # Languages Plugin (Consolidated Recent + Detailed)
+          # Languages Plugin - FIXED SETTINGS
           plugin_languages: yes
           plugin_languages_details: percentage, lines
           plugin_languages_sections: most-used, recently-used
-          plugin_languages_indepth: yes
+          plugin_languages_indepth: no # Disable deep analysis to stop the crash
+          plugin_languages_recent_load: 400 # Limits event scanning to prevent errors
+          plugin_languages_recent_days: 14  # Narrower window for better stability
           plugin_languages_limit: 8
           # Habits Plugin
           plugin_habits: yes
@@ -31,14 +33,14 @@ jobs:
           plugin_habits_charts: yes
           config_timezone: Africa/Cairo
 
-      # 2. DevCard: Separate as it uses a different action
+      # 2. DevCard
       - name: Generate DevCard
         uses: dailydotdev/action-devcard@2.0.5
         with:
           devcard_id: ${{ secrets.DEVCARD_ID }}
           commit_filename: res/devcard.svg
 
-      # 3. Snake: The classic contribution visualization
+      # 3. Snake Contribution Animation
       - name: Generate Snake
         uses: Platane/snk@v3
         with:
@@ -47,13 +49,11 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # 4. Deployment: Push everything to the output branch
+      # 4. Deployment
       - name: Push Assets
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: output
           build_dir: dist
-          # If you want to keep the metrics in 'res/', 
-          # make sure they are moved to the 'dist' folder before this step
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
