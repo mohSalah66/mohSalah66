@@ -68,6 +68,34 @@ jobs:
           plugin_languages_limit: 8
           config_timezone: africa/khartoum
 
+  github-3d-contrib:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: 3D Contribution Graph
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          USERNAME: mohsalah66
+          MAX_REPOS: 100
+          SETTING_JSON: |
+            {
+              "githubUserName": "mohsalah66",
+              "title": "",
+              "backgroundColor": "",
+              "foregroundColor": "",
+              "donuteStyle3DGraph": false
+            }
+
+      - name: Push 3D graph to repo
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: main
+          build_dir: profile-3d-contrib
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
   github-snake:
     runs-on: ubuntu-latest
     timeout-minutes: 10

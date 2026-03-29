@@ -29,6 +29,16 @@
 
 ---
 
+## GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=mohsalah66&theme=radical&show_icons=true&include_all_commits=true&count_private=true" alt="GitHub Stats" />
+  &nbsp;&nbsp;
+  <img src="https://streak-stats.demolab.com?user=mohsalah66&theme=radical&hide_border=false" alt="GitHub Streak" />
+</p>
+
+---
+
 ## Tech Stack
 
 A snapshot of the tools and technologies I work with regularly:
@@ -106,14 +116,24 @@ A snapshot of the tools and technologies I work with regularly:
 
 ## Contribution Graph
 
+**Snake**
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/github-snake.svg" />
   <img alt="GitHub contribution snake animation" src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/github-snake.svg" />
 </picture>
 
+**3D Isometric**
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mohSalah66/mohSalah66/main/profile-3d-contrib/profile-night-rainbow.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mohSalah66/mohSalah66/main/profile-3d-contrib/profile-south-season-animate.svg" />
+  <img alt="3D Isometric Contribution Graph" src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/main/profile-3d-contrib/profile-night-rainbow.svg" />
+</picture>
+
 ---
 
 <p align="center">
-  Thanks for stopping by — feel free to reach out via my <a href="https://mohsalah.net">website</a> or any of the links above.
+  Thanks for stopping by — feel free to reach out.
 </p>
