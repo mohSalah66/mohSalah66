@@ -10,11 +10,11 @@ jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
-      # 1. Base Metrics & Habits (These are stable)
+      # 1. Base Metrics & Habits
       - name: Base & Habits
         uses: lowlighter/metrics@v3.20
         with:
-          filename: res/metrics.base.svg
+          filename: metrics.base.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: header, repositories, activity, community, metadata
           plugin_habits: yes
@@ -25,14 +25,14 @@ jobs:
       # 2. Languages (Using @master to bypass the 'author' bug)
       - name: Languages
         uses: lowlighter/metrics@master
-        continue-on-error: true # Prevents the whole workflow from red-lining if this still fails
+        continue-on-error: true 
         with:
-          filename: res/languages.svg
+          filename: languages.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_languages: yes
           plugin_languages_details: percentage, lines
-          plugin_languages_sections: most-used # Removed recently-used temporarily to stabilize
+          plugin_languages_sections: most-used
           plugin_languages_limit: 8
           config_timezone: Africa/Cairo
 
@@ -41,7 +41,7 @@ jobs:
         uses: dailydotdev/action-devcard@2.0.5
         with:
           devcard_id: ${{ secrets.DEVCARD_ID }}
-          commit_filename: res/devcard.svg
+          commit_filename: devcard.svg
 
       # 4. Snake Animation
       - name: Generate Snake
@@ -49,10 +49,16 @@ jobs:
         with:
           github_user_name: mohSalah66
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            github-contribution-grid-snake.svg
+            github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # 5. Push All Assets
+      # 5. Move all generated SVGs to the deployment folder
+      - name: Prepare Assets
+        run: |
+          mkdir -p dist/res
+          mv *.svg dist/res/ 2>/dev/null || true
+
+      # 6. Push All Assets to 'output' branch
       - name: Push Assets
         uses: crazy-max/ghaction-github-pages@v3
         with:

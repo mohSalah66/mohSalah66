@@ -22,7 +22,7 @@
 ## 🧩 Dev Card
 
 <p align="center">
-  <img src="https://github.com/mohSalah66/mohSalah66/blob/master/res/devcard.svg" />
+  <img src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/res/devcard.svg" />
 </p>
 
 ---
@@ -40,37 +40,13 @@
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge)
 ![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-38B2AC?style=for-the-badge)
 
-### 📱 Mobile Development
-![Android](https://img.shields.io/badge/-Android-3DDC84?style=for-the-badge)
-![Kotlin](https://img.shields.io/badge/-Kotlin-7F52FF?style=for-the-badge)
-![Jetpack Compose](https://img.shields.io/badge/-Jetpack%20Compose-4285F4?style=for-the-badge)
-![Flutter](https://img.shields.io/badge/-Flutter-02569B?style=for-the-badge)
-
-### 🛠️ DevOps & Infrastructure
-![Docker](https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge)
-![Nginx](https://img.shields.io/badge/-Nginx-009639?style=for-the-badge)
-![Linux](https://img.shields.io/badge/-Linux-FCC624?style=for-the-badge)
-![Prometheus](https://img.shields.io/badge/-Prometheus-E6522C?style=for-the-badge)
-![Grafana](https://img.shields.io/badge/-Grafana-F46800?style=for-the-badge)
-
-### 🔐 Security & Real-Time
-![WebRTC](https://img.shields.io/badge/-WebRTC-333333?style=for-the-badge)
-![OAuth](https://img.shields.io/badge/-OAuth-3C3C3C?style=for-the-badge)
-![PKI](https://img.shields.io/badge/-PKI-6A5ACD?style=for-the-badge)
-
-### 🗄️ Databases
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=for-the-badge)
-![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=for-the-badge)
-
 ---
 
-## 📊 Full Tech Footprint (Auto from Repos)
+## 📊 Full Tech Footprint
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mohSalah66&layout=compact&theme=tokyonight&langs_count=10" />
+  <img src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/res/languages.svg" />
 </p>
-
-👉 This reflects all languages used across repositories (auto-updated)
 
 ---
 
@@ -81,8 +57,6 @@
 - Scalable backend with WebRTC
 - **Stack:** ASP.NET Core, LiveKit, WebRTC
 
----
-
 ### 🔐 PKI Infrastructure System
 - Full certificate authority system
 - API-based certificate issuance with SAN support
@@ -90,49 +64,10 @@
 
 ---
 
-### 📊 Monitoring & Logging Stack
-- Centralized logging using Loki + Grafana
-- OAuth authentication + Nginx reverse proxy
-- **Stack:** Grafana, Prometheus, DevOps
-
----
-
-## 🏗️ Architecture Focus
-
-- Microservices & distributed systems
-- Real-time communication (WebRTC)
-- Infrastructure automation & DevOps
-- Secure systems design (PKI, auth, SSL)
-
----
-
-## 🔭 Currently Working On
-
-- Real-time communication platforms
-- PKI & certificate lifecycle automation
-- High-performance backend services with Rust
-- Scalable production deployments
-
-## 📱 Mobile Projects
-
-- Android apps built with Kotlin & Jetpack Compose
-- Cross-platform apps using Flutter
-
----
-
-## 📊 GitHub Stats
+## 📊 GitHub Activity & Habits
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=mohSalah66&show_icons=true&theme=tokyonight" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mohSalah66&theme=tokyonight" />
-</p>
-
----
-
-## 🧠 Most Contributed Projects
-
-<p align="center">
-  <img src="https://github-contributor-stats.vercel.app/api?username=mohSalah66&limit=5&theme=tokyonight&combine_all_yearly_contributions=true" />
+  <img src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/res/metrics.base.svg" />
 </p>
 
 ---
@@ -147,7 +82,9 @@
 
 ## 🐍 Contribution Graph
 
-![snake gif](https://github.com/mohSalah66/mohSalah66/blob/output/github-contribution-grid-snake.svg)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/output/res/github-contribution-grid-snake.svg" />
+</p>
 
 ---
 
