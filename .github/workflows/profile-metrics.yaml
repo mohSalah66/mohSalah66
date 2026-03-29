@@ -34,6 +34,7 @@ jobs:
 
   github-habits-list:
     runs-on: ubuntu-latest
+    needs: github-metrics        # ← add this one line
     timeout-minutes: 15
     steps:
       - name: Get The habits
@@ -46,14 +47,14 @@ jobs:
           repositories: 100
           committer_message: "chore: update habits chart."
           plugin_habits: yes
-          plugin_habits_from: 200        # ← was 1000, GitHub API max is 300
+          plugin_habits_from: 200
           plugin_habits_facts: yes
-          plugin_habits_days: 14         # ← reduced from 30
+          plugin_habits_days: 14
           plugin_habits_trim: yes
           plugin_habits_charts: yes
           config_timezone: Africa/Khartoum
 
-          
+
   github-language-status:
     runs-on: ubuntu-latest
     steps:
