@@ -24,7 +24,7 @@
 <p align="center">
   <img alt="Profile Overview" src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/master/res/mohsalah66.profile.overview.svg" width="60%">
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img alt="Dev Card" src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/master/res/mohsalah66.devcard.png" width="25%">
+  <img alt="Dev Card" src="https://raw.githubusercontent.com/mohSalah66/mohSalah66/master/res/mohsalah66.devcard.svg" width="25%">
 </p>
 
 ---
