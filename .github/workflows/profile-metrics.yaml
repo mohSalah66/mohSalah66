@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Repo Status
-        uses: lowlighter/metrics@v3.20
+        uses: lowlighter/metrics@v3.34
         with:
           filename: res/mohsalah66.profile.overview.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -60,7 +60,7 @@ jobs:
     needs: github-habits-list   
     steps:
       - name: Languages Status Must Used (with details)
-        uses: lowlighter/metrics@v3.20
+        uses: lowlighter/metrics@v3.34
         with:
           filename: res/mohsalah66.languages.details.svg
           token: ${{ secrets.METRICS_TOKEN }}
