@@ -79,7 +79,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
       - name: 3D Contribution Graph
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
