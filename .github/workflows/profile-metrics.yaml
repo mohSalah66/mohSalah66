@@ -1,4 +1,5 @@
 name: Daily Metrics
+
 on:
   # Schedule daily updates
   schedule: [{ cron: "0 0 * * *" }]
@@ -6,19 +7,26 @@ on:
   workflow_dispatch:
   # (optional) Run workflow when pushing on master/main
   # push: {branches: ["master", "main"]}
+
+# Prevent overlapping runs (e.g. manual + scheduled) from racing on pushes
+concurrency:
+  group: daily-metrics
+  cancel-in-progress: false
+
 jobs:
   devcard:
-      runs-on: ubuntu-latest
-      steps:
-        - name: devcard
-          uses: dailydotdev/action-devcard@2.0.5
-          with:
-            devcard_id: ${{ secrets.DEVCARD_ID }}
-            commit_filename: res/mohsalah66.devcard.svg
-            commit_message: "chore: update ${filename}"
-            
+    runs-on: ubuntu-latest
+    steps:
+      - name: devcard
+        uses: dailydotdev/action-devcard@2.0.5
+        with:
+          devcard_id: ${{ secrets.DEVCARD_ID }}
+          commit_filename: res/mohsalah66.devcard.svg
+          commit_message: "chore: update ${filename}"
+
   github-metrics:
     runs-on: ubuntu-latest
+    needs: devcard
     steps:
       - name: Repo Status
         uses: lowlighter/metrics@v4
@@ -30,11 +38,11 @@ jobs:
           plugin_lines: yes
           repositories: 1000
           committer_message: "chore: update profile overview."
-          config_timezone: africa/khartoum
+          config_timezone: Africa/Khartoum
 
   github-habits-list:
     runs-on: ubuntu-latest
-    needs: github-metrics        # ← add this one line
+    needs: github-metrics
     timeout-minutes: 15
     steps:
       - name: Get The habits
@@ -54,16 +62,16 @@ jobs:
           plugin_habits_charts: yes
           config_timezone: Africa/Khartoum
 
-
   github-language-status:
     runs-on: ubuntu-latest
-    needs: github-habits-list   
+    needs: github-habits-list
     steps:
       - name: Languages Status Must Used (with details)
         uses: lowlighter/metrics@v4
         with:
           filename: res/mohsalah66.languages.details.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          user: mohsalah66
           base: ""
           repositories: 1000
           committer_message: "chore: update languages stats."
@@ -71,10 +79,11 @@ jobs:
           plugin_languages_categories: programming, data, prose, markup
           plugin_languages_details: percentage, lines
           plugin_languages_limit: 8
-          config_timezone: africa/khartoum
+          config_timezone: Africa/Khartoum
 
   github-3d-contrib:
     runs-on: ubuntu-latest
+    needs: github-language-status   # runs last, after all other commits to master
     timeout-minutes: 15
     permissions:
       contents: write
@@ -93,9 +102,13 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add -A .
-          git commit -m "chore: update 3d contribution graph" || echo "nothing to commit"
-          git push
-  
+          git commit -m "chore: update 3d contribution graph" || { echo "nothing to commit"; exit 0; }
+          for i in 1 2 3; do
+            git pull --rebase origin master && git push && exit 0
+            sleep 5
+          done
+          exit 1
+
   github-snake:
     runs-on: ubuntu-latest
     timeout-minutes: 10
